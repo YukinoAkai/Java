@@ -40,6 +40,9 @@ public class Qes6 {
 		// 「、」区切りで格納する配列
 		String[] inpShohins = inpShohin.split("、");
 
+		int count = 0;
+		int stock2 = 0;
+
 		// 拡張for文で在庫の設定と条件にあう表示していく
 		for (String value : inpShohins) {
 			// 在庫数(stock)に0~11をランダムで入れる
@@ -48,25 +51,19 @@ public class Qes6 {
 			// 指定された値を表示
 			switch (value) {
 			case "テレビ":
-				System.out.println("テレビの残り台数は" + (stock) + "台です");
-				break;
 			case "ディスプレイ":
-				System.out.println("ディスプレイの残り台数は" + (11 - stock) + "台です");
+				count++;
+				stock2 = (count == 1 ? stock : 11 - stock2);
+				System.out.println(value + "の残り台数は" + stock2 + "台です");
+
 				break;
+
 			case "パソコン":
-				System.out.println("テレビの残り台数は" + stock + "台です");
-				break;
 			case "冷蔵庫":
-				System.out.println("冷蔵庫の残り台数は" + stock + "台です");
-				break;
 			case "扇風機":
-				System.out.println("扇風機の残り台数は" + stock + "台です");
-				break;
 			case "洗濯機":
-				System.out.println("洗濯機の残り台数は" + stock + "台です");
-				break;
 			case "加湿器":
-				System.out.println("加湿器の残り台数は" + stock + "台です");
+				System.out.println(value + "の残り台数は" + stock + "台です");
 				break;
 			default:
 				System.out.println("『 " + value + " 』は指定の商品ではありません");
