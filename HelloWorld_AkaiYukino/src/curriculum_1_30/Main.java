@@ -1,22 +1,26 @@
 package curriculum_1_30;
 
-public class Main {
-
+class Main {
 	public static void main(String[] args) {
-		Person person1 = new Person("鈴木太郎", 20, 1.7, 60, 0);
-
-		System.out.println(person1.name);
-		System.out.println(person1.age);
-		System.out.println(person1.height);
-
-		person1.bmi(person1.height, person1.weight);
+		Person person1 = new Person("鈴木", "太郎", 20, 1.7, 60);
 		person1.print();
 
-		Person person2 = new Person("山田花子", 22, 1.5, 40, 0);
+		Person person2 = new Person("山田", "花子", 22, 1.5, 40);
 		person2.print();
 
 		Person.printCount();
 
+		// q4
+		Car car = new Car();
+		Bicycle bicycle = new Bicycle();
+		// carの所有者
+		car.setOwner(person1.fullName());
+		// bicycleの所有者
+		bicycle.setOwner(person2.fullName());
+
+		// q10
+		person1.buy(car);
+		person2.buy(bicycle);
 	}
 
 }
